@@ -3,7 +3,7 @@ ARG BASE_VER=20.04
 
 FROM ${YASTACK_BASE_IMAGE}:${BASE_VER}
 
-RUN cd / && git clone https://github.com/saaras-io/yastack.git
+RUN cd / && git clone https://github.com/girishmotwani/yastack.git
 RUN cd /yastack/ev/external/protobuf-3.5.0 && ./autogen.sh && ./configure && make && make check && make install && ldconfig
 # Do not include tests for packaging
 RUN cd /yastack/ev/ && sed -i 's/\(add_subdirectory(test)\)/#\1/' CMakeLists.txt
