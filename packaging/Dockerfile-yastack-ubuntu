@@ -1,5 +1,5 @@
 ARG DPDK_VERSION=18.05
-ARG OS_VER=18.04
+ARG OS_VER=20.04
 FROM ubuntu:${OS_VER}
 #linux-headers-$(uname -r) \
 
