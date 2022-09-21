@@ -1,12 +1,12 @@
 ARG DPDK_VERSION=18.05
-ARG OS_VER=20.04
+ARG OS_VER=16.04
 FROM ubuntu:${OS_VER}
 #linux-headers-$(uname -r) \
 
 ENV TZ=America/Los_Angeles
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y linux-headers-$(uname -r)
+RUN apt-get update && apt-get install -y linux-headers-4.15.0-1113-azure
 
 RUN apt-get update && apt-get install -y \
     g++-5 \
